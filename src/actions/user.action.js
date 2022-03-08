@@ -1,0 +1,207 @@
+import { cartConstants, userConstants, orderConstants } from "./constants";
+import axios from "../helpers/axios";
+
+export const getAddress = () => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.post(`/user/getaddress`);
+      dispatch({ type: userConstants.GET_USER_ADDRESS_REQUEST });
+      if (res.status === 200) {
+        const {
+          userAddress: { address },
+        } = res.data;
+        dispatch({
+          type: userConstants.GET_USER_ADDRESS_SUCCESS,
+          payload: { address },
+        });
+      } else {
+        const { error } = res.data;
+        dispatch({
+          type: userConstants.GET_USER_ADDRESS_FAILURE,
+          payload: { error },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const addAddress = (payload) => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.post(`/user/address/create`, { payload });
+      dispatch({ type: userConstants.ADD_USER_ADDRESS_REQUEST });
+      if (res.status === 201) {
+        console.log(res);
+        const {
+          address: { address },
+        } = res.data;
+        dispatch({
+          type: userConstants.ADD_USER_ADDRESS_SUCCESS,
+          payload: { address },
+        });
+      } else {
+        const { error } = res.data;
+        dispatch({
+          type: userConstants.ADD_USER_ADDRESS_FAILURE,
+          payload: { error },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const addOrder = (payload) => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.post(`/addOrder`, payload);
+      dispatch({ type: userConstants.ADD_USER_ORDER_REQUEST });
+      if (res.status === 201) {
+        console.log(res);
+        const { order } = res.data;
+        dispatch({
+          type: cartConstants.RESET_CART,
+        });
+        dispatch({
+          type: userConstants.ADD_USER_ORDER_SUCCESS,
+          payload: { order },
+        });
+        const {
+          address: { address },
+        } = res.data;
+        dispatch({
+          type: userConstants.ADD_USER_ADDRESS_SUCCESS,
+          payload: { address },
+        });
+      } else {
+        const { error } = res.data;
+        dispatch({
+          type: userConstants.ADD_USER_ORDER_FAILURE,
+          payload: { error },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const updateOrder = (payload) => {
+  return async (dispatch) => {
+    dispatch({ type: orderConstants.UPDATE_ORDER_REQUEST });
+    try {
+      const res = await axios.post("/update", payload);
+      if (res.status === 201) {
+        dispatch({ type: orderConstants.UPDATE_ORDER_SUCCESS });
+        dispatch(getOrders());
+      } else {
+        const { error } = res.data;
+        dispatch({
+          type: orderConstants.UPDATE_ORDER_FAILURE,
+          payload: { error },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const getOrders = () => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.get(`/getOrders`);
+      dispatch({ type: userConstants.GET_USER_ORDER_REQUEST });
+      if (res.status === 200) {
+        const { orders } = res.data;
+        console.log(res.data);
+        dispatch({
+          type: userConstants.GET_USER_ORDER_SUCCESS,
+          payload: { orders },
+        });
+      } else {
+        const { error } = res.data;
+        dispatch({
+          type: userConstants.GET_USER_ORDER_FAILURE,
+          payload: { error },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+// single order with complete info and delivery location
+export const getOrder = (payload) => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.post(`/getOrder`, payload);
+      dispatch({ type: userConstants.GET_USER_ORDER_DETAILS_REQUEST });
+      if (res.status === 200) {
+        console.log(res);
+        const { order } = res.data;
+        dispatch({
+          type: userConstants.ORDER_PAY_SUCCESS,
+          payload: { order },
+        });
+        dispatch({
+          type: userConstants.GET_USER_ORDER_DETAILS_SUCCESS,
+          payload: { order },
+        });
+      } else {
+        const { error } = res.data;
+        dispatch({
+          type: userConstants.GET_USER_ORDER_DETAILS_FAILURE,
+          payload: { error },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const getPaypalClientId = (payload) => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.get("/paypal/clientId", payload);
+      if (res.statusText !== "OK") {
+        throw new Error(res.data.message);
+      } else {
+        const clientId = res.data.clientId;
+        dispatch({
+          type: userConstants.ORDER_PAY_SUCCESS,
+          payload: { clientId },
+        });
+      }
+    } catch (error) {}
+  };
+};
+
+export const getCustomerOrders = () => {
+  return async (dispatch) => {
+    dispatch({ type: orderConstants.GET_CUSTOMER_ORDER_REQUEST });
+    try {
+      const res = await axios.post("/admin/order/getCustomerOrders");
+      if (res.status === 200) {
+        const { orders } = res.data;
+        dispatch({
+          type: orderConstants.GET_CUSTOMER_ORDER_SUCCESS,
+          payload: { orders },
+        });
+      } else {
+        const { error } = res.data;
+        dispatch({
+          type: orderConstants.GET_CUSTOMER_ORDER_FAILURE,
+          payload: { error },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
