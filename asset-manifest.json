@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/react-client-electronic/static/css/main.d2659963.css",
+    "main.js": "/react-client-electronic/static/js/main.22c388a7.js",
+    "static/js/787.44e022fc.chunk.js": "/react-client-electronic/static/js/787.44e022fc.chunk.js",
+    "static/media/269831800_448623376925343__n.jpg": "/react-client-electronic/static/media/269831800_448623376925343_3948327536734450820_n.2a2efa176428d82e68e3.jpg",
+    "static/media/87096758_269626647356248__n.jpg": "/react-client-electronic/static/media/87096758_269626647356248_6940852014318354432_n.adf417be36f5e4514a73.jpg",
+    "static/media/revicons.eot": "/react-client-electronic/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/react-client-electronic/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/react-client-electronic/static/media/revicons.e8746a624ed098489406.woff",
+    "index.html": "/react-client-electronic/index.html",
+    "main.d2659963.css.map": "/react-client-electronic/static/css/main.d2659963.css.map",
+    "main.22c388a7.js.map": "/react-client-electronic/static/js/main.22c388a7.js.map",
+    "787.44e022fc.chunk.js.map": "/react-client-electronic/static/js/787.44e022fc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d2659963.css",
+    "static/js/main.22c388a7.js"
+  ]
+}
