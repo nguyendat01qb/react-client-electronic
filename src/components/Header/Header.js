@@ -414,7 +414,7 @@ const Header = () => {
       <div className="sub-header">
         {/* Logo */}
         <div className="logo">
-          <a href="/" style={{ marginTop: "-10px" }}>
+          <a href="/react-client-electronic" style={{ marginTop: "-10px" }}>
             <div
               style={{
                 display: "flex",
