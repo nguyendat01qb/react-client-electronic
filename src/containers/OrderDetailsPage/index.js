@@ -96,7 +96,10 @@ const OrderDetailsPage = (props) => {
                 Bảng tình trạng đơn hàng
               </div>
               <div className="delTitle">Bạn cũng có thể: </div>
-              <Link to={`/invoice/${orderDetails._id}`} className="loginButton">
+              <Link
+                to={`/react-client-electronic/invoice/${orderDetails._id}`}
+                className="loginButton"
+              >
                 Xem hoá đơn chi tiết
               </Link>
             </div>

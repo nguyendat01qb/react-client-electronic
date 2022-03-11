@@ -128,8 +128,17 @@ const Header = () => {
         }
         menus={[
           { label: "Thông tin cá nhân", href: "", icon: null },
-          { label: "Đơn hàng", href: "/account/orders", icon: null },
-          { label: "Đăng xuất", href: "", icon: null, onClick: logout },
+          {
+            label: "Đơn hàng",
+            href: "/react-client-electronic/account/orders",
+            icon: null,
+          },
+          {
+            label: "Đăng xuất",
+            href: "/react-client-electronic",
+            icon: null,
+            onClick: logout,
+          },
         ]}
       />
     );
@@ -497,11 +506,11 @@ const Header = () => {
                 label: "Liên hệ qua email",
                 href: "mailto:nvdatdev@gmail.com",
                 icon: null,
-              }
+              },
             ]}
           />
           <div>
-            <a href={"/cart"} className="cart">
+            <a href={"/react-client-electronic/cart"} className="cart">
               <div style={{ fontSize: "20px", position: "relative" }}>
                 <span style={{ margin: "0 10px" }}>
                   {Object.keys(cart.cartItems).length ? (

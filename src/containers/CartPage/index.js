@@ -101,7 +101,9 @@ const CartPage = (props) => {
               {Object.keys(cartItems).length > 0 ? (
                 <MaterialButton
                   title="ĐẶT HÀNG"
-                  onClick={() => props.history.push(`/checkout`)}
+                  onClick={() =>
+                    props.history.push(`/react-client-electronic/checkout`)
+                  }
                 />
               ) : (
                 <MaterialButton

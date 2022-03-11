@@ -7,7 +7,6 @@ const useStyle = makeStyles({
     width: "100%",
   },
   carousel: {
-    marginTop: 50,
     zIndex: 0,
   },
 });

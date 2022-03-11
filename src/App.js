@@ -32,19 +32,38 @@ function App() {
       <ReactNotification />
       <Router>
         <Switch>
-          <Route path="/" exact component={HomePageContainer} />
-          {/* <Route path="/" exact component={HomePage} /> */}
-          <Route path="/cart" component={CartPage} />
-          <Route path="/checkout" component={CheckoutPage} />
-          <Route path="/account/orders" component={OrderPage} />
-          <Route path="/order_details/:orderId" component={OrderDetailsPage} />
-          <Route path="/invoice/:orderId" component={Invoice} />
+          <Route
+            path="/react-client-electronic/"
+            exact
+            component={HomePageContainer}
+          />
+          {/* <Route path="/react-client-electronic/" exact component={HomePage} /> */}
+          <Route path="/react-client-electronic/cart" component={CartPage} />
+          <Route
+            path="/react-client-electronic/checkout"
+            component={CheckoutPage}
+          />
+          <Route
+            path="/react-client-electronic/account/orders"
+            component={OrderPage}
+          />
+          <Route
+            path="/react-client-electronic/order_details/:orderId"
+            component={OrderDetailsPage}
+          />
+          <Route
+            path="/react-client-electronic/invoice/:orderId"
+            component={Invoice}
+          />
 
           <Route
-            path="/:productSlug/:productId/p"
+            path="/react-client-electronic/:productSlug/:productId/p"
             component={ProductDetailsPage}
           />
-          <Route path="/:slug" component={ProductListPage} />
+          <Route
+            path="/react-client-electronic/:slug"
+            component={ProductListPage}
+          />
         </Switch>
       </Router>
     </div>

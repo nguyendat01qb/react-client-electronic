@@ -59,7 +59,7 @@ const OrderPage = () => {
                   alignItems: "center",
                   color: "black",
                 }}
-                to={`/order_details/${order._id}`}
+                to={`/react-client-electronic/order_details/${order._id}`}
                 className="orderItemContainer"
               >
                 <div className="orderImgContainer">

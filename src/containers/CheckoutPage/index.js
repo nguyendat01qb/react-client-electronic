@@ -240,10 +240,14 @@ const CheckoutPage = (props) => {
 
   useEffect(() => {
     if (confirmOrder && user.placedOrderId) {
-      props.history.push(`/order_details/${user.placedOrderId}`);
+      props.history.push(
+        `/react-client-electronic/order_details/${user.placedOrderId}`
+      );
     }
     if (confirmPayment && user.placedOrderId) {
-      props.history.push(`/order_details/${user.placedOrderId}`);
+      props.history.push(
+        `/react-client-electronic/order_details/${user.placedOrderId}`
+      );
     }
   }, [user.placedOrderId]);
 
