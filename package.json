@@ -33,7 +33,6 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "serve": "npx --max_old_space_size=8192 vue-cli-service serve",
     "start": "set PORT=3000 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
