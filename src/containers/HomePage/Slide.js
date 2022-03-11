@@ -163,7 +163,7 @@ const Slide = ({ title, value }) => {
           <>
             <Link
               key={product._id}
-              to={`/${product.slug}/${product._id}/p`}
+              to={`/react-client-electronic/${product.slug}/${product._id}/p`}
               className={classes.wrapper}
             >
               <img

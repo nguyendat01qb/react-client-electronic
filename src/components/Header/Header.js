@@ -120,14 +120,18 @@ const Header = () => {
       <DropdownMenu
         menu={
           <div className="account">
-            <a href="/" className="fullName">
+            <a href="/react-client-electronic/" className="fullName">
               {auth.user.fullname}
             </a>
             <img src={avatar} alt="Avatar" width="50" height="50" />
           </div>
         }
         menus={[
-          { label: "Thông tin cá nhân", href: "", icon: null },
+          {
+            label: "Thông tin cá nhân",
+            href: "/react-client-electronic/",
+            icon: null,
+          },
           {
             label: "Đơn hàng",
             href: "/react-client-electronic/account/orders",
@@ -135,7 +139,7 @@ const Header = () => {
           },
           {
             label: "Đăng xuất",
-            href: "/react-client-electronic",
+            href: "/react-client-electronic/",
             icon: null,
             onClick: logout,
           },
@@ -163,7 +167,7 @@ const Header = () => {
           { label: "Thông tin cá nhân", href: "", icon: null },
           {
             label: "Đơn hàng",
-            href: `/account/orders`,
+            href: `/react-client-electronic/account/orders`,
             icon: null,
             onClick: () => {
               !auth.authenticate && setLoginModal(true);
@@ -477,7 +481,7 @@ const Header = () => {
                     <ListItem>
                       <Link
                         key={product._id}
-                        to={`/${product.slug}/${product._id}/p`}
+                        to={`/react-client-electronic/${product.slug}/${product._id}/p`}
                       >
                         {product.name}
                       </Link>
