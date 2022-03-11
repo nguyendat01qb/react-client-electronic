@@ -66,7 +66,6 @@ const OrderDetailsPage = (props) => {
         style={{
           width: "1160px",
           margin: "10px auto",
-          marginTop: "100px",
         }}
       >
         <Card

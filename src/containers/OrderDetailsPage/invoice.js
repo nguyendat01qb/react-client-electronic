@@ -31,7 +31,6 @@ const Invoice = (props) => {
       <main
         className="m-5 p-5 lg:max-w-4xl lg:mx-auto bg-white
       rounded shadow"
-        style={{ marginTop: "100px" }}
       >
         <header
           className="flex flex-col items-center
