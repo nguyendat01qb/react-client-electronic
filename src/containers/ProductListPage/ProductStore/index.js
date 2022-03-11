@@ -48,7 +48,7 @@ const ProductStore = (props) => {
               <div style={{ display: "flex" }}>
                 {product.productsByPrice[key].map((product) => (
                   <Link
-                    to={`/${product.slug}/${product._id}/p`}
+                    to={`/react-client-electronic/${product.slug}/${product._id}/p`}
                     style={{
                       display: "block",
                       textDecoration: "none",

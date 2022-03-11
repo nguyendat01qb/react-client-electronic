@@ -30,7 +30,7 @@ const ClothingAndAccessories = (props) => {
           <div className="caContainer">
             <Link
               className="caImgContainer"
-              to={`/${product.slug}/${product._id}/p`}
+              to={`/react-client-electronic/${product.slug}/${product._id}/p`}
             >
               <img
                 src={generatePublicUrl(product.productPictures[0].img)}
