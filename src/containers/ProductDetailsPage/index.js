@@ -95,7 +95,7 @@ const ProductDetailsPage = (props) => {
                   const img = product.productDetails[0].productPictures[0].img;
                   if (product.productDetails[0].quantity > 0) {
                     dispatch(addToCart({ _id, name, price, img }));
-                    props.history.push("/cart");
+                    props.history.push("/react-client-electronic/cart");
                   }
                   return;
                 }}
@@ -123,7 +123,7 @@ const ProductDetailsPage = (props) => {
                   const img = product.productDetails[0].productPictures[0].img;
                   if (product.productDetails[0].quantity > 0) {
                     dispatch(addToCart({ _id, name, price, img }));
-                    props.history.push(`/checkout`);
+                    props.history.push(`/react-client-electronic/checkout`);
                   }
                   return;
                 }}
@@ -136,15 +136,19 @@ const ProductDetailsPage = (props) => {
           <div className="breed">
             <ul>
               <li>
-                <a href="/">Home</a>
+                <a href="/react-client-electronic">Home</a>
                 <IoIosArrowForward />
               </li>
               <li>
-                <a href="/">{product.productDetails[1]}</a>
+                <a href="/react-client-electronic">
+                  {product.productDetails[1]}
+                </a>
                 <IoIosArrowForward />
               </li>
               <li>
-                <a href="/">{product.productDetails[0].name}</a>
+                <a href="/react-client-electronic">
+                  {product.productDetails[0].name}
+                </a>
               </li>
             </ul>
           </div>
