@@ -134,7 +134,7 @@ const Header = () => {
           },
           {
             label: "Đơn hàng",
-            href: "/react-client-electronic/account/orders",
+            href: "/react-client-electronic/orders",
             icon: null,
           },
           {
@@ -167,7 +167,7 @@ const Header = () => {
           { label: "Thông tin cá nhân", href: "", icon: null },
           {
             label: "Đơn hàng",
-            href: `/react-client-electronic/account/orders`,
+            href: `/react-client-electronic/orders`,
             icon: null,
             onClick: () => {
               !auth.authenticate && setLoginModal(true);
